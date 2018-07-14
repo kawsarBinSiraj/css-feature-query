@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <title>CSS Feature Query</title>
+<style>
+body {
+  text-align:center;
+  font-family: 'Shrikhand', cursive;
+}
+
+html , 
+body {
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+}
+
+.text {
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* if this browser support -webkit-text-fill-color property 
+   then execute below the process otherwise will not work 
+ **/
+
+@supports (-webkit-text-fill-color:transparent) {
+  h1 {
+    -webkit-text-fill-color:transparent;
+    -webkit-text-stroke:1px #0099e5;
+     font-size:3rem;
+  }
+}
+
+
+/* if this browser not support -webkit-text-fill-color property 
+   then execute below the process. 
+ **/
+@supports not (-webkit-text-fill-color:transparent) {
+  h1 {
+    color: #ff4c4c;
+  }
+}
+
+
+/* 
+ * This is Example line
+ **/
+@supports not (text-fill-color:transparent) {
+  h2 {
+    color: red;
+	font-size:3rem;
+  }
+}
+</style>
+</head>
+<body>
+
+  
+  <div class="text">
+    <div class="inner"> 
+		<h1>CSS Feature Query</h1>
+        <h2>This is Example line </h2>
+	</div>
+  </div>
+  
+  
+</body>
+</html>
